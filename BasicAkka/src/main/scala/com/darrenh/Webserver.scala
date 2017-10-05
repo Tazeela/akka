@@ -2,19 +2,19 @@ import akka.actor._
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
+import com.typesafe.config.{ConfigValueFactory, ConfigFactory}
 import akka.stream.ActorMaterializer
 import scala.io.StdIn
 import com.darrenh.actor.MonitorActor
 
 object WebServer {
   def main(args: Array[String]) {
-
+    
     implicit val system = ActorSystem("my-system")
+
     implicit val materializer = ActorMaterializer()
-    // needed for the future flatMap/onComplete in the end
     implicit val executionContext = system.dispatcher
 
-    // Register a monitor actor for demo purposes
     system.actorOf(Props[MonitorActor], "cluster-monitor")
 
     val route =
