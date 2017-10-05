@@ -22,4 +22,4 @@ if ( (-Not ($imageExists)) -Or ($force) ) {
 } 
 
 docker rm -f $containername1
-docker run --name $containername1 -p 8081:8080 -it $imagename 
+docker run --name $containername1 -p 8081:8080 -p 2552:2552 -it $imagename 
