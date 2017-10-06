@@ -15,7 +15,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-spray-json" % "10.0.10", 
 
   "com.typesafe.akka" %% "akka-testkit" % akkaVersion,
-
+  "com.lightbend.akka" %% "akka-management-cluster-http" % "0.4",
   "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 )
 
